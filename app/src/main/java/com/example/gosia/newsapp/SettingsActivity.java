@@ -31,7 +31,7 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public boolean onPreferenceChange(Preference preference, Object newValue) {
             String stringValue = newValue.toString();
-            preference.setSummary(stringValue   );
+            preference.setSummary(stringValue);
             return true;
         }
 
@@ -39,7 +39,7 @@ public class SettingsActivity extends AppCompatActivity {
             preference.setOnPreferenceChangeListener(this);
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(preference.getContext());
             String preferenceString = preferences.getString(preference.getKey(), "");
-            onPreferenceChange(preference,preferenceString);
+            onPreferenceChange(preference, preferenceString);
         }
     }
 }

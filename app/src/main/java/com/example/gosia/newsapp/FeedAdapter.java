@@ -58,7 +58,6 @@ public class FeedAdapter extends ArrayAdapter {
         TextView authorTv = convertView.findViewById(R.id.feed_author);
 
         if (!TextUtils.isEmpty(titleAuthor)){
-
             String authorString = getContext().getString(R.string.author) + ": " + titleAuthor;
             authorTv.setText(authorString);
         }else {

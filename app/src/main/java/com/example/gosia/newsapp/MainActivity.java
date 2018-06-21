@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private static final String REQUEST_URL = "https://content.guardianapis.com/search";
     private FeedAdapter feedAdapter;
     private TextView emptyTv;
+    private static final String API_KEY = "5e1fcff5-8897-4c40-a61b-74b9e0483639";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,11 +74,15 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         Uri baseUri = Uri.parse(REQUEST_URL);
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
-        uriBuilder.appendQueryParameter("section", section);
-        uriBuilder.appendQueryParameter("order-by","newest");
-        uriBuilder.appendQueryParameter("api-key","test");
-
-
+        if (section.isEmpty()){
+            uriBuilder.appendQueryParameter("order-by","newest");
+            uriBuilder.appendQueryParameter("api-key", API_KEY);
+        }else {
+            uriBuilder.appendQueryParameter("section", section);
+            uriBuilder.appendQueryParameter("order-by","newest");
+            uriBuilder.appendQueryParameter("api-key", API_KEY);
+        }
+        Log.i("onCreateLoader", uriBuilder.toString());
         return new FeedLoader(this, uriBuilder.toString());
     }
 

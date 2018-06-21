@@ -111,7 +111,7 @@ public final class QueryUtils {
     private static List<Feed> extractFeedFromJson(String jsonResponse){
 
         if (TextUtils.isEmpty(jsonResponse)){
-            return  null;
+            return null;
         }
 
         List<Feed> feeds = new ArrayList<>();
