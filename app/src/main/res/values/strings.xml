@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">News App</string>
+    <string name="not_available">not available</string>
+    <string name="author">Author</string>
+    <string name="no_connection">No internet connection.</string>
+    <string name="no_feeds">No news available.</string>
+
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">News Settings</string>
+
+    <string name="settings_section_label">Section</string>
+    <string name="settings_section_key">section</string>
+
+    <string name="settings_section_default_value" translatable="false"></string>
+    <string name="settings_section_default_label">None</string>
+
+    <string name="settings_section_sport_value" translatable="false">sport</string>
+    <string name="settings_section_sport_label">Sport</string>
+
+    <string name="settings_section_politics_value" translatable="false">politics</string>
+    <string name="settings_section_politics_label">Politics</string>
+
+    <string name="settings_section_world_news_value" translatable="false">world</string>
+    <string name="settings_section_world_news_label">World News</string>
+
+    <string name="settings_section_culture_value" translatable="false">culture</string>
+    <string name="settings_section_culture_label">Culture</string>
+
+    <string name="settings_section_technology_value" translatable="false">technology</string>
+    <string name="settings_section_technology_label">Technology</string>
+
+
+</resources>
