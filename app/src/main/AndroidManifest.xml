@@ -21,7 +21,8 @@
         </activity>
         <activity android:name=".SettingsActivity"
             android:label="@string/settings_title"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.example.gosia.newsapp.MainActivity"/>
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".MainActivity"/>
