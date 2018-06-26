@@ -9,4 +9,11 @@
         android:entries="@array/settings_section_labels"
         android:entryValues="@array/settings_section_values"/>
 
+    <ListPreference
+        android:key="@string/settings_order_by_key"
+        android:title="@string/settings_order_by_label"
+        android:defaultValue="@string/settings_order_by_default_value"
+        android:entries="@array/settings_order_by_labels"
+        android:entryValues="@array/settings_order_by_values"/>
+
 </PreferenceScreen>

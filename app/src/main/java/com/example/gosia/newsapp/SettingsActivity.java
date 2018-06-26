@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 
+import java.lang.ref.Reference;
+
 public class SettingsActivity extends AppCompatActivity {
 
     @Override
@@ -26,6 +28,9 @@ public class SettingsActivity extends AppCompatActivity {
 
             Preference section = findPreference(getString(R.string.settings_section_key));
             bindPreferenceSummaryToValue(section);
+
+            Preference orderBy = findPreference(getString(R.string.settings_order_by_key));
+            bindPreferenceSummaryToValue(orderBy);
         }
 
         @Override

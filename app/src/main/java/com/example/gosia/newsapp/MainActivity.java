@@ -71,15 +71,19 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 getString(R.string.settings_section_key),
                 getString(R.string.settings_section_default_value));
 
+        String orderBy = sharedPreferences.getString(
+                getString(R.string.settings_order_by_key),
+                getString(R.string.settings_order_by_default_value));
+
         Uri baseUri = Uri.parse(REQUEST_URL);
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         if (section.isEmpty()){
-            uriBuilder.appendQueryParameter("order-by","newest");
+            uriBuilder.appendQueryParameter("order-by",orderBy);
             uriBuilder.appendQueryParameter("api-key", API_KEY);
         }else {
             uriBuilder.appendQueryParameter("section", section);
-            uriBuilder.appendQueryParameter("order-by","newest");
+            uriBuilder.appendQueryParameter("order-by",orderBy);
             uriBuilder.appendQueryParameter("api-key", API_KEY);
         }
         Log.i("onCreateLoader", uriBuilder.toString());
