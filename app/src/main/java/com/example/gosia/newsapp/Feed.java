@@ -6,12 +6,14 @@ public class Feed {
     private String feedSection;
     private String feedDate;
     private String feedUrl;
+    private String feedAuthor;
 
-    public Feed(String title, String section, String date, String url){
+    public Feed(String title, String section, String date, String url, String author){
         feedTitle = title;
         feedSection = section;
         feedDate = date;
         feedUrl = url;
+        feedAuthor = author;
     }
 
     public String getFeedTitle(){
@@ -29,4 +31,6 @@ public class Feed {
     public String getFeedUrl() {
         return feedUrl;
     }
+
+    public String getFeedAuthor(){return feedAuthor; }
 }

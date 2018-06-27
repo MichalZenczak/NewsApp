@@ -126,7 +126,9 @@ public final class QueryUtils {
                 String date = feed.getString("webPublicationDate");
                 String title = feed.getString("webTitle");
                 String url = feed.getString("webUrl");
-                Feed feedItem = new Feed(title, topic, date, url);
+                JSONObject fieldsObject = feed.getJSONObject("fields");
+                String author = fieldsObject.getString("byline");
+                Feed feedItem = new Feed(title, topic, date, url, author);
                 feeds.add(feedItem);
             }
         } catch (JSONException e) {

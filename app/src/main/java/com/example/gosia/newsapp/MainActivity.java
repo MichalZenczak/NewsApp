@@ -24,11 +24,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<Feed>> {
 
     private static final int FEED_LOADER_ID = 1;
-    //private static final String REQUEST_URL = "https://content.guardianapis.com/search?order-by=newest&use-date=published&api-key=test";
     private static final String REQUEST_URL = "https://content.guardianapis.com/search";
     private FeedAdapter feedAdapter;
     private TextView emptyTv;
-    private static final String API_KEY = "5e1fcff5-8897-4c40-a61b-74b9e0483639";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,10 +79,12 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         if (section.isEmpty()){
             uriBuilder.appendQueryParameter("order-by",orderBy);
             uriBuilder.appendQueryParameter("api-key", API_KEY);
+            uriBuilder.appendQueryParameter("show-fields", "byline");
         }else {
             uriBuilder.appendQueryParameter("section", section);
             uriBuilder.appendQueryParameter("order-by",orderBy);
             uriBuilder.appendQueryParameter("api-key", API_KEY);
+            uriBuilder.appendQueryParameter("show-fields", "byline");
         }
         Log.i("onCreateLoader", uriBuilder.toString());
         return new FeedLoader(this, uriBuilder.toString());
